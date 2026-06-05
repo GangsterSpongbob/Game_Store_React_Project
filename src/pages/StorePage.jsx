@@ -1,17 +1,21 @@
 import { useEffect, useState } from 'react';
-import { getGames } from '../services/api';
+import { useNavigate } from 'react-router-dom';
+import { getGames, addToLibrary } from '../services/api';
+import { useUser } from '../context/UserContext';
 import GameCard from '../components/GameCard';
 
 function StorePage() {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedGame, setSelectedGame] = useState(null); // for modal
+  const [selectedGame, setSelectedGame] = useState(null);
+  const { user, setUser } = useUser();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchGames() {
       try {
         const allGames = await getGames();
-        setGames(allGames.slice(0, 6)); // first 6 games
+        setGames(allGames.slice(0, 6));
       } catch (err) {
         console.error('Failed to fetch games', err);
       } finally {
@@ -29,10 +33,19 @@ function StorePage() {
     setSelectedGame(null);
   };
 
-  const handleAddToLibrary = () => {
-    // Placeholder: later we'll implement adding to user's library
-    alert(`Added ${selectedGame.title} to library (not yet implemented)`);
-    closeModal();
+  const handleAddToLibrary = async () => {
+    if (!user) {
+      navigate('/login');
+      return;
+    }
+    try {
+      const updatedUser = await addToLibrary(user.id, selectedGame.id);
+      setUser(updatedUser);
+      alert(`${selectedGame.title} added to your library!`);
+      closeModal();
+    } catch (err) {
+      alert(err.message);
+    }
   };
 
   if (loading) return <div>Loading games...</div>;
@@ -52,7 +65,6 @@ function StorePage() {
         ))}
       </div>
 
-      {/* Modal (floating window) */}
       {selectedGame && (
         <div style={{
           position: 'fixed',

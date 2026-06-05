@@ -51,3 +51,65 @@ export async function getGameById(id) {
   const res = await fetch(`${GAMES_URL}/${id}`);
   return res.json();
 }
+
+// Add a game to user's library
+export async function addToLibrary(userId, gameId) {
+  // First get current user
+  const userRes = await fetch(`${API_URL}/${userId}`);
+  const user = await userRes.json();
+  
+  // Check if game already in library
+  const alreadyOwned = user.library.some(item => item.gameId === gameId);
+  if (alreadyOwned) {
+    throw new Error('Game already in library');
+  }
+  
+  // Add new game with playtime 0
+  const updatedLibrary = [...user.library, { gameId, playtime: 0 }];
+  
+  // Update user
+  const updateRes = await fetch(`${API_URL}/${userId}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ library: updatedLibrary })
+  });
+  return updateRes.json();
+}
+
+// Remove a game from user's library
+export async function removeFromLibrary(userId, gameId) {
+  const userRes = await fetch(`${API_URL}/${userId}`);
+  const user = await userRes.json();
+  
+  const updatedLibrary = user.library.filter(item => item.gameId !== gameId);
+  
+  const updateRes = await fetch(`${API_URL}/${userId}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ library: updatedLibrary })
+  });
+  return updateRes.json();
+}
+
+// Increase playtime by 1 hour
+export async function incrementPlaytime(userId, gameId) {
+  // Get current user
+  const userRes = await fetch(`${API_URL}/${userId}`);
+  const user = await userRes.json();
+  
+  // Find game in library
+  const updatedLibrary = user.library.map(item => {
+    if (item.gameId === gameId) {
+      return { ...item, playtime: item.playtime + 1 };
+    }
+    return item;
+  });
+  
+  // Update user
+  const updateRes = await fetch(`${API_URL}/${userId}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ library: updatedLibrary })
+  });
+  return updateRes.json();
+}
