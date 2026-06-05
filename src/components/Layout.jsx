@@ -5,7 +5,7 @@ function Layout() {
   return (
     <div style={{ display: 'flex' }}>
       <Navbar />
-      <div style={{ flex: 1, padding: '16px' }}>
+      <div className="layout-main" style={{ flex: 1 }}>
         <Outlet />
       </div>
     </div>

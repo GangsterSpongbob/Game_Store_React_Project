@@ -1,3 +1,4 @@
+/* RESET & BASE */
 * {
   margin: 0;
   padding: 0;
@@ -5,24 +6,146 @@
 }
 
 body {
-  font-family: system-ui, 'Segoe UI', 'Roboto', sans-serif;
-  background: white;
-  color: black;
+  font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+  background: linear-gradient(135deg, #1a0000 0%, #2d0000 50%, #1a0000 100%);
+  color: #f0f0f0;
+  min-height: 100vh;
+}
+
+/* GLOBAL LINKS & BUTTONS */
+a {
+  color: #ff9999;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #ff3333;
+  text-decoration: underline;
 }
 
 button {
-  background: #ddd;
-  border: 1px solid black;
-  padding: 4px 8px;
+  background: #3a0a0a;
+  border: 1px solid #aa2e2e;
+  color: #ffe0e0;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
-
+button:hover:not(:disabled) {
+  background: #aa2e2e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-a {
-  color: black;
-  text-decoration: underline;
+/* CARDS, MODALS, CONTAINERS */
+.card, .game-card, .modal-content, .account-box, form > div {
+  background: rgba(30, 5, 5, 0.85);
+  backdrop-filter: blur(2px);
+  border-radius: 16px;
+  border: 1px solid #aa2e2e;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+}
+
+/* NAVBAR */
+.navbar {
+  background: linear-gradient(180deg, #2a0505 0%, #1a0202 100%);
+  border-right: 2px solid #aa2e2e;
+  box-shadow: 4px 0 15px rgba(0,0,0,0.5);
+}
+
+.navbar a {
+  display: block;
+  padding: 12px 16px;
+  margin: 8px 0;
+  background: #3a0a0a;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+.navbar a:hover {
+  background: #aa2e2e;
+  transform: translateX(4px);
+}
+
+/* MAIN LAYOUT */
+.layout-main {
+  padding: 24px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 24px;
+  margin: 16px;
+  backdrop-filter: blur(1px);
+}
+
+/* STORE & LIBRARY GRID */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 16px;
+}
+
+/* FORMS & INPUTS */
+input, textarea, select {
+  background: #2a0505;
+  border: 1px solid #aa2e2e;
+  border-radius: 12px;
+  padding: 8px 12px;
+  color: #ffe0e0;
+  font-size: 1rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+input:focus {
+  outline: none;
+  border-color: #ff5555;
+  box-shadow: 0 0 8px #ff5555;
+}
+label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: inline-block;
+  color: #ffaaaa;
+}
+
+/* MODAL (floating window) */
+.modal-overlay {
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+}
+.modal-content {
+  background: #2a0505;
+  border: 2px solid #ff5555;
+  border-radius: 24px;
+  padding: 24px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1a0202;
+}
+::-webkit-scrollbar-thumb {
+  background: #aa2e2e;
+  border-radius: 10px;
 }
