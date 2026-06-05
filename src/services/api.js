@@ -1,4 +1,5 @@
 const API_URL = 'http://localhost:5000/users';
+const GAMES_URL = 'http://localhost:5000/games';
 
 // Fetch all users
 export async function getUsers() {
@@ -38,5 +39,15 @@ export async function updateUser(userId, updatedData) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updatedData)
   });
+  return res.json();
+}
+
+export async function getGames() {
+  const res = await fetch(GAMES_URL);
+  return res.json();
+}
+
+export async function getGameById(id) {
+  const res = await fetch(`${GAMES_URL}/${id}`);
   return res.json();
 }
