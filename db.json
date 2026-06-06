@@ -1,0 +1,198 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "demo@example.com",
+      "username": "demouser",
+      "password": "123456",
+      "library": []
+    },
+    {
+      "email": "asd@fgh",
+      "username": "asd",
+      "password": "123",
+      "library": [
+        {
+          "gameId": "3",
+          "playtime": 1
+        }
+      ],
+      "id": "eRKFvyJ_Me8"
+    },
+    {
+      "email": "asdf@asdf",
+      "username": "asdf",
+      "password": "123",
+      "library": [
+        {
+          "gameId": "3",
+          "playtime": 3
+        }
+      ],
+      "id": "JhyROGWEjyw"
+    }
+  ],
+  "games": [
+    {
+      "id": "1",
+      "title": "Subnautica",
+      "genre": "Survival",
+      "price": 29.99,
+      "description": "Explore an alien ocean planet.",
+      "image": "https://via.placeholder.com/200x150?text=Subnautica"
+    },
+    {
+      "id": "2",
+      "title": "Subnautica: Below Zero",
+      "genre": "Survival",
+      "price": 29.99,
+      "description": "Return to the frozen depths.",
+      "image": "https://via.placeholder.com/200x150?text=Below+Zero"
+    },
+    {
+      "id": "3",
+      "title": "Hollow Knight",
+      "genre": "Metroidvania",
+      "price": 14.99,
+      "description": "A bug kingdom adventure.",
+      "image": "https://via.placeholder.com/200x150?text=Hollow+Knight"
+    },
+    {
+      "id": "4",
+      "title": "Hollow Knight: Silksong",
+      "genre": "Metroidvania",
+      "price": 19.99,
+      "description": "Play as Hornet.",
+      "image": "https://via.placeholder.com/200x150?text=Silksong"
+    },
+    {
+      "id": "5",
+      "title": "Diablo IV",
+      "genre": "Action RPG",
+      "price": 69.99,
+      "description": "Fight the legions of Hell.",
+      "image": "https://via.placeholder.com/200x150?text=Diablo+IV"
+    },
+    {
+      "id": "6",
+      "title": "DOOM Eternal",
+      "genre": "FPS",
+      "price": 39.99,
+      "description": "Rip and tear.",
+      "image": "https://via.placeholder.com/200x150?text=DOOM+Eternal"
+    },
+    {
+      "id": "7",
+      "title": "Hades",
+      "genre": "Roguelike",
+      "price": 24.99,
+      "description": "Escape the underworld.",
+      "image": "https://via.placeholder.com/200x150?text=Hades"
+    },
+    {
+      "id": "8",
+      "title": "Cyberpunk 2077",
+      "genre": "Open World",
+      "price": 59.99,
+      "description": "Night city awaits.",
+      "image": "https://via.placeholder.com/200x150?text=Cyberpunk"
+    },
+    {
+      "id": "9",
+      "title": "Elden Ring",
+      "genre": "Souls-like",
+      "price": 59.99,
+      "description": "Become the Elden Lord.",
+      "image": "https://via.placeholder.com/200x150?text=Elden+Ring"
+    },
+    {
+      "id": "10",
+      "title": "Stardew Valley",
+      "genre": "Simulation",
+      "price": 14.99,
+      "description": "Grow your farm.",
+      "image": "https://via.placeholder.com/200x150?text=Stardew+Valley"
+    },
+    {
+      "id": "11",
+      "title": "Celeste",
+      "genre": "Platformer",
+      "price": 19.99,
+      "description": "Climb the mountain.",
+      "image": "https://via.placeholder.com/200x150?text=Celeste"
+    },
+    {
+      "id": "12",
+      "title": "Disco Elysium",
+      "genre": "RPG",
+      "price": 39.99,
+      "description": "Solve a murder.",
+      "image": "https://via.placeholder.com/200x150?text=Disco+Elysium"
+    },
+    {
+      "id": "13",
+      "title": "Outer Wilds",
+      "genre": "Exploration",
+      "price": 24.99,
+      "description": "A time loop mystery.",
+      "image": "https://via.placeholder.com/200x150?text=Outer+Wilds"
+    },
+    {
+      "id": "14",
+      "title": "Risk of Rain 2",
+      "genre": "Roguelike",
+      "price": 24.99,
+      "description": "Co-op chaos.",
+      "image": "https://via.placeholder.com/200x150?text=Risk+of+Rain+2"
+    },
+    {
+      "id": "15",
+      "title": "Deep Rock Galactic",
+      "genre": "Co-op FPS",
+      "price": 29.99,
+      "description": "Mine with friends.",
+      "image": "https://via.placeholder.com/200x150?text=Deep+Rock"
+    },
+    {
+      "id": "16",
+      "title": "Factorio",
+      "genre": "Automation",
+      "price": 35,
+      "description": "Build a factory.",
+      "image": "https://via.placeholder.com/200x150?text=Factorio"
+    },
+    {
+      "id": "17",
+      "title": "Satisfactory",
+      "genre": "Automation",
+      "price": 29.99,
+      "description": "3D factory building.",
+      "image": "https://via.placeholder.com/200x150?text=Satisfactory"
+    },
+    {
+      "id": "18",
+      "title": "Vampire Survivors",
+      "genre": "Roguelite",
+      "price": 4.99,
+      "description": "Survive the night.",
+      "image": "https://via.placeholder.com/200x150?text=Vampire+Survivors"
+    },
+    {
+      "id": "19",
+      "title": "Baldur's Gate 3",
+      "genre": "CRPG",
+      "price": 59.99,
+      "description": "A epic D&D adventure.",
+      "image": "https://via.placeholder.com/200x150?text=BG3"
+    },
+    {
+      "id": "20",
+      "title": "Portal 2",
+      "genre": "Puzzle",
+      "price": 9.99,
+      "description": "Co-op puzzles.",
+      "image": "https://via.placeholder.com/200x150?text=Portal+2"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
